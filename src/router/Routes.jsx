@@ -4,6 +4,7 @@ import Error from "../pages/Error/Error";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Patients from "../pages/Patients/Patients";
 import Orders from "../pages/Orders/Orders";
+import EditPatient from "../pages/Patients/EditPatient";
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: "/patients",
                 element: <Patients></Patients>
+            },
+            {
+                path: "/update-patient/id",
+                element: <EditPatient></EditPatient>
             },
             {
                 path: "/orders",
