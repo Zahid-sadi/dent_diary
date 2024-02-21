@@ -11,11 +11,14 @@ const Patients = () => {
                     <FontAwesomeIcon icon={faUserPlus} /> Add Patient
                 </button>
             </div>
-            <div className="flex">
+            <div className="flex gap-x-4">
                 <input className="border-2 border-slate-400 rounded-full px-8 py-2" placeholder="Search by Patient Name" type="text" />
+                <button className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full">
+                                    Search
+                                </button>
             </div>
             <div className="mt-8">
-                <table className="w-max table-auto text-left">
+                <table className="w-full table-auto text-left">
                     <thead className="bg-slate-200">
                         <tr>
                             <th className="p-2">Sl.</th>
