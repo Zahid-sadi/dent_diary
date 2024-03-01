@@ -10,7 +10,7 @@ const Patients = () => {
     useEffect(() => {
         const getAllPatients = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/all-patients')
+                const res = await axios.get('http://localhost:3000/app/all-patients')
                 setPatient(res.data);
             } catch (err) {
                 console.log(err);
@@ -19,7 +19,7 @@ const Patients = () => {
         getAllPatients();
     }, [patients])
 
-    console.log(patients);
+    // console.log(patients);
 
     return (
         <div>
@@ -57,13 +57,13 @@ const Patients = () => {
                                 <>
                                     <tr>
                                         <td className="p-2"> {i + 1} </td>
-                                        <td className="p-2">{patient.patientName}</td>
-                                        <td className="p-2">{patient.doctorName}</td>
-                                        <td className="p-2">{patient.dateAdded}</td>
-                                        <td className="p-2">{patient.email}</td>
-                                        <td className="p-2">{patient.gender}</td>
-                                        <td className="p-2">{patient.contact}</td>
-                                        <td className="p-2">{patient.address}</td>
+                                        <td className="p-2">{patient.patientName ? patient.patientName : 'N/A'}</td>
+                                        <td className="p-2">{patient.doctorName ? patient.doctorName : 'N/A'}</td>
+                                        <td className="p-2">{patient.dateAdded ? new Date(patient.dateAdded).toLocaleString() : 'N/A'}</td>
+                                        <td className="p-2">{patient.email ? patient.email : 'N/A'}</td>
+                                        <td className="p-2">{patient.gender ? patient.gender : 'N/A'}</td>
+                                        <td className="p-2">{patient.contact ? patient.contact : 'N/A'}</td>
+                                        <td className="p-2">{patient.address ? patient.address : 'N/A'}</td>
                                         <td className="flex gap-1.5 p-2">
                                             <button className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded">
                                                 Create

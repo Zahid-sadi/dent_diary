@@ -1,10 +1,13 @@
 import axios from "axios";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import toast, { Toaster } from "react-hot-toast";
-// import {  useState } from "react";
+import {  useState } from "react";
 import Select from "react-select";
 
 const AddPatient = () => {
     // const [patient, setPatient] = useState({})
+    const [startDate, setStartDate] = useState(new Date());
 
     const options = [
         { value: 'male', label: 'Male' },
@@ -21,6 +24,7 @@ const AddPatient = () => {
         e.preventDefault();
         const form = e.target;
         const patient = {
+            dateAdded: new Date(),
             firstName: form.firstName.value,
             lastName: form.lastName.value,
             email: form.email.value,
@@ -38,7 +42,7 @@ const AddPatient = () => {
 
         const addPatient = async () => {
             try {
-                await axios.post('http://localhost:3000/add-patients', patient)
+                await axios.post('http://localhost:3000/app/add-patients', patient)
                     .then(function (response) {
                         console.log('response:', response);
                         form.reset();
@@ -92,7 +96,8 @@ const AddPatient = () => {
                             </div>
                             <div className="mt-2 w-full">
                                 <label className="block text-sm font-medium leading-6 text-gray-900 text-left">Date of Birth</label>
-                                <input type="text" name="dob" className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                <DatePicker className="" selected={startDate} onChange={(date) => setStartDate(date)}/>
+                                {/* <input type="text" name="dob" className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> */}
                             </div>
                             <div className="mt-2 w-full">
                                 <label className="block text-sm font-medium leading-6 text-gray-900 text-left">Country Code</label>
