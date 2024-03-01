@@ -10,7 +10,7 @@ const Patients = () => {
     useEffect(() => {
         const getAllPatients = async () => {
             try {
-                const res = await axios.get('http://143.198.152.89/app/all-patients')
+                const res = await axios.get('http://localhost:3000/app/all-patients')
                 setPatient(res.data);
             } catch (err) {
                 console.log(err);
@@ -57,7 +57,7 @@ const Patients = () => {
                                 <>
                                     <tr>
                                         <td className="p-2"> {i + 1} </td>
-                                        <td className="p-2">{patient.patientName ? patient.patientName : 'N/A'}</td>
+                                        <td className="p-2">{patient.firstName ? patient.firstName.concat(' ').concat(patient.lastName) : 'N/A'}</td>
                                         <td className="p-2">{patient.doctorName ? patient.doctorName : 'N/A'}</td>
                                         <td className="p-2">{patient.dateAdded ? new Date(patient.dateAdded).toLocaleString() : 'N/A'}</td>
                                         <td className="p-2">{patient.email ? patient.email : 'N/A'}</td>

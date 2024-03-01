@@ -42,7 +42,7 @@ const AddPatient = () => {
 
         const addPatient = async () => {
             try {
-                await axios.post('http://143.198.152.89/app/add-patients', patient)
+                await axios.post('http://localhost:3000/app/add-patients', patient)
                     .then(function (response) {
                         console.log('response:', response);
                         form.reset();
