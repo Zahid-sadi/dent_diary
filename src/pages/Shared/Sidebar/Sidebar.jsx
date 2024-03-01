@@ -9,7 +9,7 @@ const Sidebar = () => {
         <div className="bg-sky-600 w-max h-screen">
             <div>
                 <div className="bg-white p-1">
-                    <Link to={'/'}><img className="w-[5vw] mb-8" src="/public/logo.png" alt="invisya logo" /></Link>
+                    <Link to={'/'}><img className="w-[5vw] mb-8" src="/logo.png" alt="invisya logo" /></Link>
                 </div>
                 <ul className="text-left text-zinc-50 w-[15vw] text-lg p-1">
                     <li> <Link to={'/dashboard'}>Dashboard</Link></li>
