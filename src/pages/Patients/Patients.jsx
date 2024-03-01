@@ -25,9 +25,9 @@ const Patients = () => {
         <div>
             <div className="flex justify-between">
                 <h2 className="font-bold text-xl text-left">Patients</h2>
-                <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded">
+                <Link to={'/add-patient'}> <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded">
                     <FontAwesomeIcon icon={faUserPlus} /> Add Patient
-                </button>
+                </button></Link>
             </div>
             <div className="flex gap-x-4">
                 <input className="border-2 border-slate-400 rounded-full px-8 py-2" placeholder="Search by Patient Name" type="text" />

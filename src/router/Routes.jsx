@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Patients from "../pages/Patients/Patients";
 import Orders from "../pages/Orders/Orders";
 import EditPatient from "../pages/Patients/EditPatient";
+import AddPatient from "../pages/Patients/AddPatient";
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: "/patients",
                 element: <Patients></Patients>
+            },
+            {
+                path: "/add-patient",
+                element: <AddPatient></AddPatient>
             },
             {
                 path: "/update-patient/id",
