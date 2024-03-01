@@ -42,7 +42,7 @@ const AddPatient = () => {
 
         const addPatient = async () => {
             try {
-                await axios.post('http://localhost:3000/app/add-patients', patient)
+                await axios.post('http://143.198.152.89/app/add-patients', patient)
                     .then(function (response) {
                         console.log('response:', response);
                         form.reset();
@@ -50,6 +50,7 @@ const AddPatient = () => {
                     })
                     .catch(function (error) {
                         console.log('error:', error);
+                        toast.error("Unsuccessful. Please try again later")
                     });
             }
             catch (err) {
@@ -96,7 +97,7 @@ const AddPatient = () => {
                             </div>
                             <div className="mt-2 w-full">
                                 <label className="block text-sm font-medium leading-6 text-gray-900 text-left">Date of Birth</label>
-                                <DatePicker className="" selected={startDate} onChange={(date) => setStartDate(date)}/>
+                                <DatePicker name="dob" selected={startDate} onChange={(date) => setStartDate(date)}/>
                                 {/* <input type="text" name="dob" className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> */}
                             </div>
                             <div className="mt-2 w-full">

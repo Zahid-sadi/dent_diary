@@ -10,7 +10,7 @@ const Patients = () => {
     useEffect(() => {
         const getAllPatients = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/app/all-patients')
+                const res = await axios.get('http://143.198.152.89/app/all-patients')
                 setPatient(res.data);
             } catch (err) {
                 console.log(err);
