@@ -19,7 +19,7 @@ const Patients = () => {
         getAllPatients();
     }, [patients])
 
-    // console.log(patients);
+    console.log(patients);
 
     return (
         <div>
@@ -55,7 +55,7 @@ const Patients = () => {
                         {
                             patients.map((patient, i) =>
                                 <>
-                                    <tr>
+                                    <tr key={i}>
                                         <td className="p-2"> {i + 1} </td>
                                         <td className="p-2">{patient.firstName ? patient.firstName.concat(' ').concat(patient.lastName) : 'N/A'}</td>
                                         <td className="p-2">{patient.doctorName ? patient.doctorName : 'N/A'}</td>
@@ -66,10 +66,10 @@ const Patients = () => {
                                         <td className="p-2">{patient.address ? patient.address : 'N/A'}</td>
                                         <td className="flex gap-1.5 p-2">
                                             <button className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded">
-                                                Create
+                                                Order
                                             </button>
                                             <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                                                <Link to={'/update-patient/id'}>Edit</Link>
+                                                <Link to={`/update-patient/${patient._id}`}>Edit</Link>
                                             </button>
                                             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                                 Delete

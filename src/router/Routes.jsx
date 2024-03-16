@@ -6,6 +6,7 @@ import Patients from "../pages/Patients/Patients";
 import Orders from "../pages/Orders/Orders";
 import EditPatient from "../pages/Patients/EditPatient";
 import AddPatient from "../pages/Patients/AddPatient";
+import axios from "axios";
 
 
 const router = createBrowserRouter([
@@ -27,8 +28,9 @@ const router = createBrowserRouter([
                 element: <AddPatient></AddPatient>
             },
             {
-                path: "/update-patient/id",
-                element: <EditPatient></EditPatient>
+                path: "/update-patient/:id",
+                element: <EditPatient></EditPatient>,
+                loader:({params}) => {return axios.get(`http://localhost:3000/app/update-patient/${params.id}`)}
             },
             {
                 path: "/orders",
