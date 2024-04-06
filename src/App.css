@@ -40,3 +40,33 @@
 .read-the-docs {
   color: #888;
 }
+
+/* sidebar active route */
+#dashboard a.active, #patients a.active, #orders a.active {
+  color: black;
+}
+
+
+.hasImage:hover section {
+  background-color: rgba(5, 5, 5, 0.4);
+}
+.hasImage:hover button:hover {
+  background: rgba(5, 5, 5, 0.45);
+}
+
+#overlay p,
+i {
+  opacity: 0;
+}
+
+#overlay.draggedover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#overlay.draggedover p,
+#overlay.draggedover i {
+  opacity: 1;
+}
+
+.group:hover .group-hover\:text-blue-800 {
+  color: #2b6cb0;
+}

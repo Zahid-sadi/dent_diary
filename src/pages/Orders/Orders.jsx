@@ -1,4 +1,4 @@
-import { faArrowLeft, faArrowRight, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight, faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -8,7 +8,7 @@ const Orders = () => {
         <div className="flex justify-between">
             <h2 className="font-bold text-xl text-left">Orders</h2>
             <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded">
-                <FontAwesomeIcon icon={faUserPlus} /> Reload
+            <FontAwesomeIcon icon={faArrowsRotate} /> Reload
             </button>
         </div>
         <div className="flex">

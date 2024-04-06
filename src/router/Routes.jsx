@@ -7,6 +7,7 @@ import Orders from "../pages/Orders/Orders";
 import EditPatient from "../pages/Patients/EditPatient";
 import AddPatient from "../pages/Patients/AddPatient";
 import axios from "axios";
+import CreateOrder from "../pages/Orders/CreateOrder";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "/orders",
                 element: <Orders></Orders>
+            },
+            {
+                path: "/create-order",
+                element: <CreateOrder></CreateOrder>
             },
         ]
     }
