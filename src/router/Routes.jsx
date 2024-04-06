@@ -8,6 +8,7 @@ import EditPatient from "../pages/Patients/EditPatient";
 import AddPatient from "../pages/Patients/AddPatient";
 import axios from "axios";
 import CreateOrder from "../pages/Orders/CreateOrder";
+import PatientInfo from "../pages/Patients/Prescription/PatientInfo";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: "/patients",
                 element: <Patients></Patients>
+            },
+            {
+                path: "/prescription",
+                element: <PatientInfo></PatientInfo>
             },
             {
                 path: "/add-patient",

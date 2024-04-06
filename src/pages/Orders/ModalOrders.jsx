@@ -108,12 +108,14 @@ const ModalOrders = ({ closeModal, setUploadType }) => {
                                                 </svg>
                                             </i>
                                             <p className="text-lg text-blue-700">Drop files to upload</p>
+
                                         </div>
 
                                         <section className="h-full overflow-auto p-8 w-full h-full flex flex-col">
                                             <header className="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
                                                 <p className="mb-3 font-semibold text-gray-900 flex flex-wrap justify-center">
                                                     <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
+                                                    
                                                 </p>
                                                 {/* <input id="hidden-input" type="file" multiple className="invisible" onChange={(e) => fileInputOnChange(e)} /> */}
                                                 <input id="hidden-input" type="file" name="files" accept multiple={true} className="invisible" ref={inputRef} onChange={handleInputChange} />
@@ -126,7 +128,8 @@ const ModalOrders = ({ closeModal, setUploadType }) => {
                                                     Object.keys(file).length > 0 &&
                                                     Object.keys(file).map((singleFile) => {
                                                         return <div key={file[singleFile].size} className="w-3/4 flex flex-col justify-center items-center">
-                                                            <img className="w-2/4" src={URL.createObjectURL(file[singleFile])} alt="image preview" />
+                                                            {/* <img className="w-2/4" src={URL.createObjectURL(file[singleFile])} alt="image preview" /> */}
+                                                            <FontAwesomeIcon icon="fa-solid fa-file" />
                                                             <h2 className="text-sm text-wrap">{file[singleFile].name}</h2>
                                                             <button className="btn" 
                                                             onClick={() => {
@@ -147,6 +150,7 @@ const ModalOrders = ({ closeModal, setUploadType }) => {
                                                     <ul id="gallery" className="flex flex-1 flex-wrap m-1">
                                                         <li id="empty" className="h-full w-full text-center flex flex-col items-center justify-center items-center">
                                                             <img className="mx-auto w-32" src="https://user-images.githubusercontent.com/507615/54591670-ac0a0180-4a65-11e9-846c-e55ffce0fe7b.png" alt="no data" />
+                                                            {/* <FontAwesomeIcon icon="fa-solid fa-file" /> */}
                                                             <span className="text-small text-gray-500">No files selected</span>
                                                         </li>
                                                     </ul>
@@ -207,6 +211,7 @@ const ModalOrders = ({ closeModal, setUploadType }) => {
                             <li className="block p-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/8 h-24">
                                 <article tabIndex="0" className="group hasImage w-full h-full rounded-md focus:outline-none focus:shadow-outline bg-gray-100 cursor-pointer relative text-transparent hover:text-white shadow-sm">
                                     <img alt="upload preview" className="img-preview w-full h-full sticky object-cover rounded-md bg-fixed" />
+                                    <FontAwesomeIcon icon="fa-solid fa-file" />
 
                                     <section className="flex flex-col rounded-md text-xs break-words w-full h-full z-20 absolute top-0 py-2 px-3">
                                         <h1 className="flex-1"></h1>
